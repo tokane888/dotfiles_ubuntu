@@ -10,11 +10,11 @@ install_chrome() {
 }
 
 main() {
-  apt purge -y libreoffice-* thunderbird*
+  apt-get purge -y libreoffice-* thunderbird*
 
   # 先にopenssh-serverをinstallすると、特定バージョン依存の関係でエラーになるので先にopenssh-client削除
-  apt purge -y openssh-client
-  apt install -y openssh-server
+  apt-get purge -y openssh-client
+  apt-get install -y openssh-server
 
   apt-get install -y curl
   # TODO: ubuntu-software消したらアイコンが残った
