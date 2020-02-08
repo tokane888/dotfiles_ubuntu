@@ -9,6 +9,10 @@ install_chrome() {
   apt-get install -y google-chrome-stable
 }
 
+install_vim() {
+  add-apt-repository -y ppa:jonathonf/vim
+}
+
 main() {
   apt-get purge -y libreoffice-* thunderbird*
 
@@ -16,10 +20,12 @@ main() {
   apt-get purge -y openssh-client
   apt-get install -y openssh-server
 
+  apt-get install -y software-properties-common
   apt-get install -y curl
   # TODO: ubuntu-software消したらアイコンが残った
   #       アイコン押下で起動するので何か残ってる
   install_chrome
+  install_vim
 }
 
 main
