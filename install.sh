@@ -11,6 +11,8 @@ install_chrome() {
 
 install_vim() {
   add-apt-repository -y ppa:jonathonf/vim
+  apt-get update -y
+  apt-get install -y vim
 }
 
 main() {
