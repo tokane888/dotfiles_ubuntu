@@ -21,11 +21,9 @@ main() {
   # 先にopenssh-serverをinstallすると、特定バージョン依存の関係でエラーになるので先にopenssh-client削除
   apt-get purge -y openssh-client
   apt-get install -y openssh-server
-
   apt-get install -y software-properties-common
   apt-get install -y curl
-  # TODO: ubuntu-software消したらアイコンが残った
-  #       アイコン押下で起動するので何か残ってる
+
   install_chrome
   install_vim
 }
