@@ -15,6 +15,11 @@ install_vim() {
   apt-get install -y vim
 }
 
+setup_trivial() {
+  # ビープ音無効化
+  sed -i -r -e 's/#\s?set bell-style none/set bell-style none/' /etc/inputrc
+}
+
 main() {
   apt-get purge -y libreoffice-* thunderbird*
 
@@ -26,6 +31,8 @@ main() {
 
   install_chrome
   install_vim
+
+  setup_trivial
 }
 
 main
