@@ -18,6 +18,8 @@ install_vim() {
 setup_trivial() {
   # ビープ音無効化
   sed -i -r -e 's/#\s?set bell-style none/set bell-style none/' /etc/inputrc
+  # visudoのエディタをvimに
+  sudo update-alternatives --set editor /usr/bin/vim.basic
 }
 
 main() {
