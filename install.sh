@@ -15,6 +15,10 @@ install_vim() {
   apt-get install -y vim
 }
 
+deploy_setting_files() {
+  mv settings/keyboard /etc/default/keyboard
+}
+
 setup_trivial() {
   # ビープ音無効化
   sed -i -r -e 's/#\s?set bell-style none/set bell-style none/' /etc/inputrc
@@ -34,6 +38,7 @@ main() {
   install_chrome
   install_vim
 
+  deploy_setting_files
   setup_trivial
 }
 
