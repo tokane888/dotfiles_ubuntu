@@ -29,7 +29,7 @@ main() {
   apt-get purge -y openssh-client
   apt-get install -y openssh-server
   apt-get install -y software-properties-common
-  apt-get install -y curl tree
+  apt-get install -y curl tree xrdp
 
   install_chrome
   install_vim
