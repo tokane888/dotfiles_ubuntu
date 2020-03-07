@@ -19,6 +19,14 @@ deploy_setting_files() {
   mv settings/keyboard /etc/default/keyboard
 }
 
+setup_remote_desktop() {
+  apt-get install -y xrdp
+
+  # 接続直後に"Authentication is required to create a color managed device"が表示される問題の対策
+  echo "X-GNOME-Autostart-enabled=false" >> /etc/xdg/autostart/gnome-software-service.desktop
+  echo "X-GNOME-Autostart-enabled=false" >> /etc/xdg/autostart/gnome-settings-daemon.desktop
+}
+
 setup_trivial() {
   # ビープ音無効化
   sed -i -r -e 's/#\s?set bell-style none/set bell-style none/' /etc/inputrc
@@ -33,11 +41,12 @@ main() {
   apt-get purge -y openssh-client
   apt-get install -y openssh-server
   apt-get install -y software-properties-common
-  apt-get install -y curl tree xrdp
+  apt-get install -y curl tree
 
   install_chrome
   install_vim
 
+  setup_remote_desktop
   deploy_setting_files
   setup_trivial
 }
