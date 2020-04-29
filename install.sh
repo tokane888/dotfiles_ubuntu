@@ -57,6 +57,7 @@ main() {
   setup_trivial
 
   echo "dotfiles install end successfully."
+  echo "ctrl-caps lock入れ替えを即時有効化する場合は再起動して下さい"
 }
 
 main
