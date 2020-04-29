@@ -49,6 +49,8 @@ main() {
   setup_remote_desktop
   deploy_setting_files
   setup_trivial
+
+  echo "dotfiles install end successfully."
 }
 
 main
