@@ -2,6 +2,11 @@
 
 set -eux
 
+update_package_list() {
+  sed -i -e 's/\(deb\|deb-src\) http:\/\/archive.ubuntu.com/\1 http:\/\/jp.archive.ubuntu.com/g' /etc/apt/sources.list
+  apt update -y;
+}
+
 install_chrome() {
   curl https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
   echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
@@ -36,6 +41,7 @@ setup_trivial() {
 
 main() {
   apt-get purge -y libreoffice-* thunderbird*
+  update_package_list
 
   # 先にopenssh-serverをinstallすると、特定バージョン依存の関係でエラーになるので先にopenssh-client削除
   apt-get purge -y openssh-client
