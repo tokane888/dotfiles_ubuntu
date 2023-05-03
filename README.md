@@ -1,4 +1,4 @@
-# dotfiles_ubuntu
+# dotfiles ubuntu
 
-ubuntu実機向けdotfilesの暫定置き場。  
-パッケージの依存関係解決後にdotfiles repositoryに統合する。
+デスクトップとして使用する想定のubuntu実機向けdotfilesの暫定置き場。  
+サーバとして使用する想定のubuntuについては[dotfiles](https://github.com/tokane888/dotfiles)で対応
