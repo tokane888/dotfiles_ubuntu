@@ -1,6 +1,7 @@
 #!/bin/bash
+. config.sh
 
-set -eux
+set -euxo pipefail
 
 setup_trivial() {
   # visudoのエディタをvimに
@@ -11,6 +12,8 @@ install_packages() {
   # localhost:5600でdashboardが見られるが、OS再起動するまでは見えない
   curl -LO https://github.com/ActivityWatch/activitywatch/releases/download/v0.12.2/activitywatch-v0.12.2-linux-x86_64.deb
   dpkg -i activitywatch-v0.12.2-linux-x86_64.deb
+
+  apt-get install -y ${APT_PACKAGES[*]}
 }
 
 main() {
