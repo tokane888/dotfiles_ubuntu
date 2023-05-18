@@ -13,6 +13,11 @@ install_packages() {
   curl -LO https://github.com/ActivityWatch/activitywatch/releases/download/v0.12.2/activitywatch-v0.12.2-linux-x86_64.deb
   dpkg -i activitywatch-v0.12.2-linux-x86_64.deb
 
+  curl -LO https://github.com/k0kubun/xremap/releases/download/v0.8.5/xremap-linux-x86_64-gnome.zip
+  unzip ./xremap-linux-x86_64-gnome.zip
+
+  add-apt-repository -y ppa:hluk/copyq
+  apt-get update -y
   apt-get install -y ${APT_PACKAGES[*]}
 }
 
