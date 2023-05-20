@@ -16,6 +16,14 @@ install_packages() {
   add-apt-repository -y ppa:hluk/copyq
   apt-get update -y
   apt-get install -y ${APT_PACKAGES[*]}
+
+  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+}
+
+install_oh-my-zsh_plugin() {
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+  ## TODO: .zshrcのpluginにgit zsh-syntax-highlighting zsh-autosuggestions追記
 }
 
 main() {
