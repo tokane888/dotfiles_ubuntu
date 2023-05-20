@@ -5,4 +5,5 @@ APT_PACKAGES=(
   solaar
   libx11-dev
   wireshark # TODO: install時にpromptが出るので回答自動化
+  zsh
 )
