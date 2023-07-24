@@ -10,3 +10,7 @@ APT_PACKAGES=(
   xclip
   zsh
 )
+
+SNAP_PACKAGES=(
+  xmind
+)
