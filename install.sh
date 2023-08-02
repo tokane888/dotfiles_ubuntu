@@ -17,6 +17,11 @@ install_deb_packages() {
   apt-get update -y
   apt-get install -y ${APT_PACKAGES[*]}
 
+  curl https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+  echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
+  sudo apt-get update -y
+  sudo apt-get install -y google-chrome-stable
+
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 }
 
