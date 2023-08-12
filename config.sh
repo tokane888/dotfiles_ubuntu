@@ -1,5 +1,6 @@
 APT_PACKAGES=(
   autokey-gtk
+  code
   copyq
   libreoffice-calc
   libreoffice-impress
