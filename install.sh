@@ -36,10 +36,15 @@ install_oh-my-zsh_plugin() {
   ## TODO: .zshrcのpluginにgit zsh-syntax-highlighting zsh-autosuggestions追記
 }
 
+install_pip3_packages() {
+  pip3 install "${PIP3_PACKAGES[*]}"
+}
+
 main() {
   setup_trivial
   install_deb_packages
   install_snap_packages
+  install_pip3_packages
 
   echo "dotfiles ubuntu script end successfully."
 }

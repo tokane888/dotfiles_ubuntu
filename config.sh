@@ -15,3 +15,7 @@ APT_PACKAGES=(
 SNAP_PACKAGES=(
   xmind
 )
+
+PIP3_PACKAGES=(
+  shell-gpt
+)
