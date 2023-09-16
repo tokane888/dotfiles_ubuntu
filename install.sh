@@ -41,12 +41,17 @@ install_pip3_packages() {
 }
 
 install_starship_shell_prompt() {
+  pushd .
   ghq get https://github.com/ryanoasis/nerd-fonts.git
   cd "$(ghq list -p | grep nerd-fonts)"
   ./install.sh FiraCode
+  popd
 
   curl -sS https://starship.rs/install.sh -o /tmp/starship_install.sh
   sh /tmp/starship_install.sh --yes
+
+  mkdir ~/.config/
+  cp config/startship.toml ~/.config/
 }
 
 main() {
