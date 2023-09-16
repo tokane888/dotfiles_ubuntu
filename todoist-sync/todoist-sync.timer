@@ -1,0 +1,9 @@
+[Unit]
+Description=Timer for todoist sync on Startup
+
+[Timer]
+OnBootSec=1min
+Unit=todoist-sync.service
+
+[Install]
+WantedBy=multi-user.target

@@ -15,6 +15,10 @@
   - https://github.com/sachaos/todoist#install
 - toggl cliインストール
   - https://github.com/AuHau/toggl-cli
+  - OS起動時のtodoist sync自動実行有効化
+    - todoist-syncディレクトリ配下を/lib/systemd/system/に配置
+    - systemctl daemon-reload
+    - systemctl enable --now todoist-sync.service
 - ディスプレイ + カメラ映像録画service登録
   - cd pc_usage_record.service /lib/systemd/system/
   - systemctl daemon-reload
