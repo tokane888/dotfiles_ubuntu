@@ -40,11 +40,21 @@ install_pip3_packages() {
   pip3 install "${PIP3_PACKAGES[*]}"
 }
 
+install_starship_shell_prompt() {
+  ghq get https://github.com/ryanoasis/nerd-fonts.git
+  cd "$(ghq list -p | grep nerd-fonts)"
+  ./install.sh FiraCode
+
+  curl -sS https://starship.rs/install.sh -o /tmp/starship_install.sh
+  sh /tmp/starship_install.sh --yes
+}
+
 main() {
   setup_trivial
   install_deb_packages
   install_snap_packages
   install_pip3_packages
+  install_starship_shell_prompt
 
   echo "dotfiles ubuntu script end successfully."
 }
