@@ -1,0 +1,15 @@
+# デスクトップ画像 + カメラ映像を記録
+[Unit]
+Description=pc desktop and camera recorder
+After=local-fs.target
+
+[Service]
+ExecStartPre=/usr/bin/mkdir -p /home/tom/Videos/pc_usage_record
+ExecStart=/usr/bin/ffmpeg -f x11grab -r 25 -s 1920x1080 -i :0.0 -f v4l2 -s 480x256 -i /dev/video0 -filter_complex "[0:v][1:v]overlay=x=W-w:y=0" -c:v libx264 -preset ultrafast -b:v 4000k -strftime 1 -hls_segm
+WorkingDirectory=/home/tom/Videos/pc_usage_record
+Restart=always
+Type=simple
+User=tom
+
+[Install]
+WantedBy=multi-user.target

@@ -15,3 +15,7 @@
   - https://github.com/sachaos/todoist#install
 - toggl cliインストール
   - https://github.com/AuHau/toggl-cli
+- ディスプレイ + カメラ映像録画service登録
+  - cd pc_usage_record.service /lib/systemd/system/
+  - systemctl daemon-reload
+  - systemctl enable --now pc_usage_record.service
