@@ -4,6 +4,22 @@ setopt RM_STAR_SILENT
 # prompt表示にstarshipを使用するよう設定
 eval "$(starship init zsh)"
 
+# git: ctrl-x bでブランチ選択
+function peco-branch () {
+    local branch=$(git branch -a | peco | tr -d ' ' | tr -d '*')
+    if [ -n "$branch" ]; then
+      if [ -n "$LBUFFER" ]; then
+        local new_left="${LBUFFER%\ } $branch"
+      else
+        local new_left="$branch"
+      fi
+      BUFFER=${new_left}${RBUFFER}
+      CURSOR=${#new_left}
+    fi
+}
+zle -N peco-branch
+bindkey '^xb' peco-branch # C-x b でブランチ選択
+
 # 追加ツール関連設定 ===========================================
 
 ## todoist CLI + toggl CLI連携し、ctrl+x => t => sでtodoistのタスクをtogglで計測開始
