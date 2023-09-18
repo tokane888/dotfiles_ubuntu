@@ -18,4 +18,5 @@ SNAP_PACKAGES=(
 
 PIP3_PACKAGES=(
   shell-gpt
+  togglCli
 )

@@ -54,6 +54,13 @@ install_starship_shell_prompt() {
   cp config/startship.toml ~/.config/
 }
 
+install_todoist_toggl_cli() {
+  ghq get https://github.com/urfave/cli.git
+  ghq get https://github.com/sachaos/todoist.git
+
+  ## TODO: todoist, togglのbuild, 設定周り追記
+}
+
 main() {
   setup_trivial
   install_deb_packages
