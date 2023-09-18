@@ -1,9 +1,9 @@
 [Unit]
-Description=Timer for todoist sync on Startup
+Description=Run todoist sync every hour
 
 [Timer]
-OnBootSec=1min
-Unit=todoist-sync.service
+OnBootSec=5min
+OnUnitActiveSec=1h
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=timers.target
