@@ -83,7 +83,7 @@ bindkey "^xtl" peco-todoist-labels
 
 # todoist close
 function peco-todoist-close() {
-    local SELECTED_ITEMS="$(todoist list | peco | cut -d ' ' -f 1 | tr '\n' ' ')"
+    local SELECTED_ITEMS="$(todoist list --filter today -p  | peco | cut -d ' ' -f 1 | tr '\n' ' ')"
     if [ -n "$SELECTED_ITEMS" ]; then
         BUFFER="todoist close $(echo "$SELECTED_ITEMS" | tr '\n' ' ')"
         CURSOR=$#BUFFER
