@@ -34,7 +34,7 @@ bindkey '^xb' peco-branch # C-x b でブランチ選択
 
 eval "$(starship init zsh)"
 
-. ~/.config/todoist_toggl.sh
+. ~/.zshrc_cmd/todoist_toggl.sh
 
 ## alias ===========================================
 
