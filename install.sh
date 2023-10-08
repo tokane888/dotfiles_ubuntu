@@ -13,7 +13,10 @@ install_deb_packages() {
   curl -LO https://github.com/ActivityWatch/activitywatch/releases/download/v0.12.2/activitywatch-v0.12.2-linux-x86_64.deb
   dpkg -i activitywatch-v0.12.2-linux-x86_64.deb
 
-  add-apt-repository -y ppa:hluk/copyq
+  for repo in "${APT_REPOSITORIES[@]}"
+  do
+    add-apt-repository -y $repo
+  done
   apt-get update -y
   apt-get install -y "${APT_PACKAGES[*]}"
 

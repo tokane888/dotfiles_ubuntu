@@ -1,3 +1,8 @@
+APT_REPOSITORIES=(
+  ppa:appimagelauncher-team/stable
+  ppa:hluk/copyq
+)
+
 APT_PACKAGES=(
   autokey-gtk
   code
