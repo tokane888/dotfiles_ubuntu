@@ -2,12 +2,12 @@
 
 ## todoist CLI + toggl CLI連携し、ctrl+x => t => sでtodoistの今日の指定タスクをtogglで計測開始
 function toggl-start-todoist () {
-    local selected_item_id=`todoist list --filter today -p | peco | cut -d ' ' -f 1`
+    local selected_item_id=$(todoist list --filter today -p | peco | cut -d ' ' -f 1)
     if [ ! -n "$selected_item_id" ]; then
         return 0
     fi
-    local selected_item_content=`todoist --csv show ${selected_item_id} | grep Content | cut -d',' -f2- | sed s/\"//g`
-    local selected_item_project=`todoist --csv show ${selected_item_id} | grep Project | cut -d',' -f2- | sed 's/^#//'`
+    local selected_item_content=$(todoist --csv show ${selected_item_id} | grep Content | cut -d',' -f2- | sed s/\"//g)
+    local selected_item_project=$(todoist --csv show ${selected_item_id} | grep Project | cut -d',' -f2- | sed 's/^#//')
     if [ -n "$selected_item_content" ]; then
         BUFFER="toggl start \"${selected_item_content}\" --project \"${selected_item_project}\""
         CURSOR=$#BUFFER
