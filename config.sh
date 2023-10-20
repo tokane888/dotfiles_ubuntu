@@ -12,6 +12,7 @@ APT_PACKAGES=(
   solaar
   libx11-dev
   pinta
+  translate-shell # 右記のようなコマンドで翻訳 trans :ja "hello"
   wireshark # TODO: install時にpromptが出るので回答自動化
   xclip
   zsh
