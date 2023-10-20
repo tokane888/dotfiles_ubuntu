@@ -9,9 +9,9 @@ APT_PACKAGES=(
   copyq
   libreoffice-calc
   libreoffice-impress
-  solaar
   libx11-dev
   pinta
+  solaar
   translate-shell # 右記のようなコマンドで翻訳 trans :ja "hello"
   wireshark # TODO: install時にpromptが出るので回答自動化
   xclip
