@@ -5,6 +5,7 @@ APT_REPOSITORIES=(
 
 APT_PACKAGES=(
   autokey-gtk
+  cheese
   code
   copyq
   libreoffice-calc
