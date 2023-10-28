@@ -36,17 +36,9 @@ eval "$(starship init zsh)"
 
 . ~/.zshrc_cmd/todoist_toggl.sh
 
-## alias ===========================================
-
-alias cdd="cd /home/tom/Downloads"
-alias cdst="cd /home/tom/ghq/github.com/tokane888/manual/learn/statistics_basic"
-alias xc="xclip -selection clipboard"
-alias ffmpeg="ffmpeg -hide_banner"
-alias s="sgpt"
-alias sr="sgpt --repl program -s"
-alias sc="sgpt --chat program -s"
-alias ffplay="ffplay -hide_banner"
-alias ffprobe="ffprobe -hide_banner"
-alias tt="todoist list --filter today -p"
-# todoistの今日のタスクからpecoで1つ選択し、詳細出力
-alias td="todoist list --filter today -p | peco | cut -d' ' -f 1 | xargs -I % todoist show %"
+if [ -f ~/.zsh_aliases ]; then
+    source ~/.zsh_aliases
+fi
+if [ -f ~/.zsh_aliases_local ]; then
+    source ~/.zsh_aliases_local
+fi

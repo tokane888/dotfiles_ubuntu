@@ -1,0 +1,8 @@
+alias xc="xclip -selection clipboard"
+alias tt="taskwarrior-tui"
+alias s="sgpt"
+alias sr="sgpt --repl program"
+alias sc="sgpt --chat conversation"
+alias ffmpeg="ffmpeg -hide_banner"
+alias ffplay="ffplay -hide_banner"
+alias ffprobe="ffprobe -hide_banner"
