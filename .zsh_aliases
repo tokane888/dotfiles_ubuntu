@@ -16,3 +16,4 @@ alias rm='rm -f' # 別の場所でのalias設定で、ファイル削除時毎�
 alias clip.exe=/mnt/c/Windows/System32/clip.exe
 alias ffplay.exe=/mnt/c/ProgramData/chocolatey/bin/ffplay.exe
 alias code='/mnt/c/Program\ Files/Microsoft\ VS\ Code/bin/code'
+alias explorer.exe='/mnt/c/Windows/explorer.exe'
