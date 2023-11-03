@@ -11,6 +11,8 @@ alias crontab='crontab -i'
 alias lal='ls -Al'
 alias ll='ls -l'
 alias rm='rm -f' # 別の場所でのalias設定で、ファイル削除時毎回確認されることを抑止
+alias ej="trans :ja"
+alias je="trans :en"
 
 # WSL向け設定
 alias clip.exe=/mnt/c/Windows/System32/clip.exe
